@@ -13,10 +13,11 @@ def add_to_calculation(symbol):
 def evaluate_calculation():
     global calculation
     try:
+        print(calculation)
         result = str(eval(calculation))
         calculation = ""
         text_results.delete(1.0, "end")
-        text_results.insert(1.0, calculation)
+        text_results.insert(1.0, result)
     except: 
         clear_field()
         text_results.insert(1.0, "error")
