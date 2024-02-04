@@ -1,4 +1,5 @@
 import tkinter as tk
+import ttkbootstrap as ttk
 
 
 calculation = ""
@@ -32,10 +33,11 @@ def clear_field():
 
 
 root = tk.Tk()
-root.geometry("300x300")
+root.resizable(width=False, height=False)
 
 
-text_results = tk.Text(root, height=2, width=16, font=("Arial", 24))
+
+text_results = tk.Text(root, height=2,width=20, font=("Arial", 24))
 text_results.grid(columnspan=5)
 
 btn1 = tk.Button(root, text="1", command=lambda: add_to_calculation(1), width=5, font=("arial", 14))
@@ -65,27 +67,27 @@ btn8.grid(row=4, column=2)
 btn9 = tk.Button(root, text="9", command=lambda: add_to_calculation(9), width=5, font=("arial", 14))
 btn9.grid(row=4, column=3)
 
-btn0 = tk.Button(root, text="0", command=lambda: add_to_calculation(0), width=5, font=("arial", 14))
+btn0 = tk.Button(root, text="0", command=lambda: add_to_calculation(0), width=5)
 btn0.grid(row=5, column=2)
 
-btn_slash = tk.Button(root, text="(", command=lambda: add_to_calculation('('), width=5, font=("arial", 14))
+btn_slash = tk.Button(root, text="(", command=lambda: add_to_calculation('('), width=5)
 btn_slash.grid(row=5, column=1)
 
-btn_slash1 = tk.Button(root, text=")", command=lambda: add_to_calculation(')'), width=5, font=("arial", 14))
+btn_slash1 = tk.Button(root, text=")", command=lambda: add_to_calculation(')'), width=5)
 btn_slash1.grid(row=5, column=3)
 
-btn_add = tk.Button(root, text="+", command=lambda: add_to_calculation('+'), width=5, font=("arial", 14))
+btn_add = tk.Button(root, text="+", command=lambda: add_to_calculation('+'), width=5)
 btn_add.grid(row=2, column=4)
-btn_min = tk.Button(root, text="-", command=lambda: add_to_calculation('-'), width=5, font=("arial", 14))
+btn_min = tk.Button(root, text="-", command=lambda: add_to_calculation('-'), width=5)
 btn_min.grid(row=3, column=4)
-btn_mult = tk.Button(root, text="*", command=lambda: add_to_calculation('*'), width=5, font=("arial", 14))
+btn_mult = tk.Button(root, text="*", command=lambda: add_to_calculation('*'), width=5)
 btn_mult.grid(row=4, column=4)
-btn_fslash = tk.Button(root, text="/", command=lambda: add_to_calculation('/'), width=5, font=("arial", 14))
+btn_fslash = tk.Button(root, text="/", command=lambda: add_to_calculation('/'), width=5)
 btn_fslash.grid(row=5, column=4)
 
 btn_clear = tk.Button(root, text="C", command=clear_field, width=11, font=("arial", 14))
 btn_clear.grid(row=6,column=1, columnspan=2)
-btn_equal = tk.Button(root, text="=", command=evaluate_calculation, width=11, font=("arial", 14))
+btn_equal = ttk.Button(root, text="=", command=evaluate_calculation,bootstyle="danger-outline", width=11)
 btn_equal.grid(row=6,column=3, columnspan=2)
 
 
